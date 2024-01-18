@@ -4,5 +4,5 @@
     $pass = "";
     $bd = "avaliacoesfilmes";
 
-    $conn = mysqli_connect($host, $user, $pass, $bd);
+    $connNota = mysqli_connect($host, $user, $pass, $bd);
 ?>

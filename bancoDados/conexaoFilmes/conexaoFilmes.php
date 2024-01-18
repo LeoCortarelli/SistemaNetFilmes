@@ -4,5 +4,5 @@
     $pass = "";
     $bd = "sistemanetfilmes";
 
-    $conn = mysqli_connect($host, $user, $pass, $bd);
+    $connFilme = mysqli_connect($host, $user, $pass, $bd);
 ?>
