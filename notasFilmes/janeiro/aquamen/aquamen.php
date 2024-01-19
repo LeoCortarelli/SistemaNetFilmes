@@ -114,33 +114,55 @@
     <!-- Comentarios e notas -->
     <h2 class="h2-comentarios-notas">Comentarios e Notas</h2>
 
-    <?php
-        include_once('../../../bancoDados/conexaoNotas/conexaoNotas.php');
-        $sql  = "SELECT nota, comentario, data_comentario FROM aquamem2reinoperdido ORDER BY id_usuaro_nota DESC";
-        $result = mysqli_query($connNota, $sql);
-
-        // Percorrer a lista de registros do banco de dados
-        if (mysqli_num_rows($result) > 0) {
-    ?>
-            <table class="table-comentario">
-                <tr>
-                    <th class="cabecalho-trtd tamanho-nota">Nota</th>
-                    <th class="cabecalho-trtd">Comentário</th>
-                    <th class="cabecalho-trtd data-header">Data do Comentário</th>
-                </tr>
-        
-                <?php while($row = mysqli_fetch_array($result)) { ?>
-                    <tr>
-                        <td class="corpo-table tamanho-nota-echo"><?php echo $row['nota']; ?></td>
-                        <td class="corpo-table"><?php echo $row['comentario']; ?></td>
-                        <td class="corpo-table data-cell"><?php echo date('d/m/Y', strtotime($row['data_comentario'])); ?></td>
-                    </tr>
-                <?php } ?> <!-- FECHANDO O WHILE -->
-            </table>
+    <div>
         <?php
-        } else {
-            echo "<p>Nenhum comentário encontrado.</p>";
-        } ?> <!-- fechando o if -->
+            include_once('../../../bancoDados/conexaoNotas/conexaoNotas.php');
+            $sql  = "SELECT nota, comentario, data_comentario FROM aquamem2reinoperdido ORDER BY id_usuaro_nota DESC";
+            $result = mysqli_query($connNota, $sql);
+
+            // Percorrer a lista de registros do banco de dados
+            if (mysqli_num_rows($result) > 0) {
+        ?>
+                <table class="table-comentario">
+                    <tr>
+                        <th class="cabecalho-trtd tamanho-nota">Nota</th>
+                        <th class="cabecalho-trtd">Comentário</th>
+                        <th class="cabecalho-trtd data-header">Data do Comentário</th>
+                    </tr>
+            
+                    <?php while($row = mysqli_fetch_array($result)) { ?>
+                        <tr>
+                            <td class="corpo-table tamanho-nota-echo"><?php echo $row['nota']; ?></td>
+                            <td class="corpo-table"><?php echo $row['comentario']; ?></td>
+                            <td class="corpo-table data-cell"><?php echo date('d/m/Y', strtotime($row['data_comentario'])); ?></td>
+                        </tr>
+                    <?php } ?> <!-- FECHANDO O WHILE -->
+                </table>
+            <?php
+            } else {
+                echo "<p>Nenhum comentário encontrado.</p>";
+            } ?> <!-- fechando o if -->
+
+        
+            <!-- Paginação de comentarios -->
+            <div>
+                <?php include('paginacao.php'); ?>
+                <nav aria-label="Navegação de página exemplo" class="style-nav">
+                    <ul class="pagination justify-content-end style-ul">
+                        <li class="page-item"><a class="page-link style-prim" href="?page=1"><<</a></li>
+                        <?php 
+                            $primeira_pag = max($page - $intervalo_paginas, 1);
+                            $ultima_pag = min($numero_paginas, $page + $intervalo_paginas);
+
+                            for($pagina = $primeira_pag; $pagina <= $ultima_pag; $pagina++){ ?>
+                                <li class="page-item"><a class="page-link style-li-a" href="?page=<?php echo "{$pagina}"; ?>"><?php echo "{$pagina}"; ?></a></li>
+                        <?php } // Fechando o for ?>
+                        <li class="page-item"><a class="page-link style-prim" href="?page=<?php echo $ultima_pag; ?>">>></a></li>
+                    </ul>
+                </nav>
+            </div>
+    </div>
+
 
 
     <div>
