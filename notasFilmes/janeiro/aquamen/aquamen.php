@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../../../css/notasFilmes/janeiro/aquamen.css">
+    <link rel="stylesheet" href="../../../css/notasFilmes/janeiro/aquamen2.css">
     <title>Aquamen</title>
 </head>
 <body>
@@ -17,8 +17,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="../../calendario/calendario.html">Calendario</a>
+                    <a class="nav-link" aria-current="page" href="../../../index.html">Home</a>
+                    <a class="nav-link" href="../../../calendario/calendario.html">Calendario</a>
                     <a class="nav-link" href="#">Graficos</a>
                 </div>
             </div>
@@ -39,6 +39,7 @@
                     <p class="desc">
                         Um antigo poder é libertado e o herói Aquaman precisa fazer um perigoso acordo com um aliado improvável para proteger Atlântida e o mundo de uma devastação irreversível.
                     </p>
+                    <h2 class="nota-media-filme">Nota do Filme: <strong><?php include('notaMedia.php'); ?></strong></h2>
                 </div>
                 <div class="arrow">
                     <span>&#8673;</span>
@@ -49,8 +50,15 @@
 
         <!-- Avaliação -->
         <div class="div-avaliacao-config">
-            <h3>Faça sua Avaliação</h3>
-            <form action="processo.php" method="post">
+            <h3 class="titulo-faca-sua-avaliacao">Faça sua Avaliação</h3>
+            <?php 
+            // Imprimir a mensagem de erro com sucesso
+                if(isset($_SESSION['msg'])){ // (isset)se existir a variavel
+                    echo $_SESSION['msg'];
+                    unset($_SESSION['msg']); // destruindo a msg
+                }
+            ?>
+            <form action="config.php" method="post">
                 <div class="estrela">
                     <input type="radio" name="estrela" id="vazio" value="" checked>
 
@@ -87,17 +95,52 @@
                     <br>
 
                     <!-- CAMPO ENVIAR COMENTARIO -->
-                    <textarea name="comentario"rows="3" cols="30" placeholder="Digite seu Comentario"></textarea>
+                    <label class="label-textarea">
+                        <textarea class="input-bordas-textarea" name="comentario" rows="3" cols="30" placeholder="Digite seu Comentario"></textarea required>
+                            <span class="focus-border"> <i></i> </span>
+                    </label>
                     <br>
                     <br>
-                    <button type="submit">Avaliar</button>
+                    <button class="button-37" role="button" type="submit">Avaliar</button>
                 </div>
             </form>
         </div>
             
     </div>
 
-    
+    <br>
+    <h2 class="nota-media-filme">Nota do Filme: <strong><?php include('notaMedia.php'); ?></strong></h2>
+    <br>
+    <!-- Comentarios e notas -->
+    <h2 class="h2-comentarios-notas">Comentarios e Notas</h2>
+
+    <?php
+        include_once('../../../bancoDados/conexaoNotas/conexaoNotas.php');
+        $sql  = "SELECT nota, comentario, data_comentario FROM aquamem2reinoperdido ORDER BY id_usuaro_nota DESC";
+        $result = mysqli_query($connNota, $sql);
+
+        // Percorrer a lista de registros do banco de dados
+        if (mysqli_num_rows($result) > 0) {
+    ?>
+            <table class="table-comentario">
+                <tr>
+                    <th class="cabecalho-trtd tamanho-nota">Nota</th>
+                    <th class="cabecalho-trtd">Comentário</th>
+                    <th class="cabecalho-trtd data-header">Data do Comentário</th>
+                </tr>
+        
+                <?php while($row = mysqli_fetch_array($result)) { ?>
+                    <tr>
+                        <td class="corpo-table tamanho-nota-echo"><?php echo $row['nota']; ?></td>
+                        <td class="corpo-table"><?php echo $row['comentario']; ?></td>
+                        <td class="corpo-table data-cell"><?php echo date('d/m/Y', strtotime($row['data_comentario'])); ?></td>
+                    </tr>
+                <?php } ?> <!-- FECHANDO O WHILE -->
+            </table>
+        <?php
+        } else {
+            echo "<p>Nenhum comentário encontrado.</p>";
+        } ?> <!-- fechando o if -->
 
 
     <div>
