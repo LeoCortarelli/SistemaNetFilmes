@@ -19,7 +19,7 @@
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link" aria-current="page" href="../../../index.html">Home</a>
                     <a class="nav-link" href="../../../calendario/calendario.html">Calendario</a>
-                    <a class="nav-link" href="#">Graficos</a>
+                    <a class="nav-link" href="../../../graficos/graficos.php">Graficos</a>
                 </div>
             </div>
         </div>
