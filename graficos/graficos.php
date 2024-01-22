@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graficos Filmes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/stayle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/grafico/grafico3.css">
 </head>
 <body>
 
@@ -21,9 +22,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="../../calendario/calendario.html">Calendario</a>
-                    <a class="nav-link" href="../../graficos/graficos.php">Graficos</a>
+                    <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                    <a class="nav-link" href="../calendario/calendario.html">Calendario</a>
+                    <a class="nav-link" href="#">Graficos</a>
                 </div>
             </div>
         </div>
@@ -37,24 +38,29 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ["Element", "Bilheteria", { role: "style" } ], // Topo da tabela
+          ["Element", "Bilheteria Aproximada:", { role: "style" } ], // Topo da tabela
 
           <?php
 
               $sql = "SELECT * FROM filmes";
               $busca = mysqli_query($connFilme, $sql);
 
-              while($dados = mysqli_fetch_array($busca)){ // buscando na tabela clubes
+              // Adcionando cores em cada coluna no grafico
+              $cores = ["1e90ff", "yellow", "purple", "afeeee", "6495ed", "AF7AC5"]; // Adicione mais cores conforme necessário
+
+              $cont = 0;
+              while($dados = mysqli_fetch_array($busca)){ // buscando na tabela
                 $nomeFilme = $dados['nome_filme'];
                 $bilheteria = $dados['bilheteria'];
+                $cor = $cores[$cont % count($cores)];
               
 
           ?>
 
-          ["<?php echo $nomeFilme ?>", <?php echo $bilheteria ?>, "#0066cc"], 
+          ["<?php echo $nomeFilme ?>", <?php echo $bilheteria ?>, "<?php echo $cor ?>"], 
           
 
-          <?php } ?> // fechando as chaves do while
+          <?php $cont++; } ?> // fechando as chaves do while
 
         ]);
 
@@ -68,7 +74,8 @@
 
         var options = {
           title: "Grafico Maiores bilheterias do ano 2024",
-          width: 600,
+          titleTextStyle: { fontSize: 25 },
+          width: 800,
           height: 400,
           bar: {groupWidth: "95%"},
           legend: { position: "none" },
@@ -80,19 +87,58 @@
   <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
 </div>   
 
-<!-- Tabela dos filmes mais assistidos -->
-<div>
 
+<h3 class="style-titulo">Tabela Filmes com mais Bilheteria 2024</h3>
+<!-- Tabela dos filmes mais assistidos -->
+<?php $sql = "SELECT * FROM filmes ORDER BY bilheteria DESC";
+    $result = mysqli_query($connFilme, $sql);
+?>
+<div class="container-table-style">
+    <table class="table table-bordered">
+        <thead>
+            <tr class="style-tr-table">
+                <th scope="col" class="classificacao-style">Classificação</th>
+                <th scope="col" class="name-style">Nome</th>
+                <th scope="col">Diretor</th>
+                <th scope="col" class="desc-table">Descrição</th>
+                <th scope="col">Orçamento</th>
+                <th scope="col">Bilheteria</th>
+                <th scope="col" class="style-studio">Studio</th>
+                <th scope="col" class="data-header">Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                $classificacao = 1;
+                while($dados = mysqli_fetch_assoc($result)){
+                echo "<tr>";
+                echo "<td>". $classificacao. "</td>";
+                echo "<td>". $dados['nome_filme']. "</td>";
+                echo "<td>". $dados['diretor']. "</td>";
+                echo "<td>". $dados['descricao']. "</td>";
+
+                // Formatando o orçamento
+                $formatOrcamento = '$' . number_format($dados['orcamento'], 2,'.',','); 
+                echo "<td>". $formatOrcamento. "</td>";
+
+                // Formatando a Bilheteria
+                $formatBilheteria = '$' . number_format($dados['bilheteria'], 2,'.',',');
+                echo "<td>". $formatBilheteria. "</td>";
+
+                // Formatando a data para BR
+                echo "<td>". $dados['studio']. "</td>";
+                $dateFormatBR = date("d/m/Y", strtotime($dados['data_estreia']));
+                echo "<td>". $dateFormatBR. "</td>";
+                echo "<tr>";
+                $classificacao++;
+            }
+            ?>
+        </tbody>
+    </table>
 </div>
 
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <!-- Footer -->
     <div>
