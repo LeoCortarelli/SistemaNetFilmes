@@ -1,0 +1,934 @@
+.navbar {
+    height: 100px;
+    background-color: black;
+    font-family: sans-serif;
+}
+
+.navbar-brand, .nav-link {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-style{
+    font-size: 40px;
+}
+
+
+/* Titulo */
+
+.style-titulo{
+   
+    margin-top: 38px;
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+    color: black;
+}
+
+.div-cards-filmes{
+    margin-top: 100px;
+    display: flex;
+}
+.div-cards-filmes2{
+    display: flex;
+    margin-top: 70px;
+}
+
+/* Card 1 */
+.card {
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#6494ed00, #6494ed00);
+    transition: all .5s;
+}
+
+.card:hover {
+    background-image: linear-gradient(#afeeee, #afeeee);
+}
+
+.card .img {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-image: url('../../img/pobres-criaturas-footer.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: all .5s;
+    z-index: 2;
+    position: relative;
+    opacity: .8;
+}
+
+.card .img span {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 100;
+    font-style: italic;
+    transition: all .5s;
+}
+
+.card:hover .img {
+    width: 430px;
+    opacity: 1;
+}
+
+.card:hover .img span {
+    font-size: 28px;
+}
+
+.card .content {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+}
+
+.card:hover .content {
+    height: 260px;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card .content p {
+    margin: 0;
+}
+
+.card .content .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card .content .desc {
+    font-size: 14px;
+    font-weight: 100;
+    font-weight: bold;
+    opacity: .8;
+    margin-top: 8px;
+}
+
+.card .arrow {
+    padding: 15px;
+    transform: rotate(-180deg);
+    transition: all .5s;
+}
+
+.card:hover .arrow {
+    transform: rotate(0);
+}
+
+.card .arrow span {
+    font-size: 24px;
+}
+
+/* card 2 */
+.card2 {
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#6494ed00, #6494ed00);
+    transition: all .5s;
+}
+
+.card2:hover {
+    background-image: linear-gradient(#264f9b, #426ec0);
+}
+
+.card2 .img2 {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-image: url('../../img/footer_argylle.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: all .5s;
+    z-index: 2;
+    position: relative;
+    opacity: .8;
+}
+
+.card2 .img2 span {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 100;
+    font-style: italic;
+    transition: all .5s;
+}
+
+.card2:hover .img2 {
+    width: 430px;
+    opacity: 1;
+}
+
+.card2:hover .img2 span {
+    font-size: 28px;
+}
+
+.card2 .content {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+}
+
+.card2:hover .content {
+    height: 260px;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card2 .content p {
+    margin: 0;
+}
+
+.card2 .content .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card2 .content .desc {
+    font-size: 14px;
+    font-weight: 100;
+    font-weight: bold;
+    opacity: .8;
+    margin-top: 8px;
+}
+
+.card2 .arrow {
+    padding: 15px;
+    transform: rotate(-180deg);
+    transition: all .5s;
+}
+
+.card2:hover .arrow {
+    transform: rotate(0);
+}
+
+.card2 .arrow span {
+    font-size: 24px;
+}
+
+/* Card 3 */
+ 
+.card3 {
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#6494ed00, #6494ed00);
+    transition: all .5s;
+}
+
+.card3:hover {
+    background-image: linear-gradient(#672abf, #380e74);
+}
+
+.card3 .img3 {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-image: url('../../img/A-Cor-Purpura-footer.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: all .5s;
+    z-index: 2;
+    position: relative;
+    opacity: .8;
+}
+
+.card3 .img3 span {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 100;
+    font-style: italic;
+    transition: all .5s;
+}
+
+.card3:hover .img3 {
+    width: 430px;
+    opacity: 1;
+}
+
+.card3:hover .img3 span {
+    font-size: 28px;
+}
+
+.card3 .content {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+}
+
+.card3:hover .content {
+    height: 260px;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card3 .content p {
+    margin: 0;
+}
+
+.card3 .content .title {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.card3 .content .desc {
+    font-size: 12px;
+    font-weight: 100;
+    font-weight: bold;
+    opacity: .8;
+    margin-top: 8px;
+    color: white;
+}
+
+.card3 .arrow {
+    padding: 15px;
+    transform: rotate(-180deg);
+    transition: all .5s;
+}
+
+.card3:hover .arrow {
+    transform: rotate(0);
+}
+
+.card3 .arrow span {
+    font-size: 24px;
+}
+
+/* Card 4 */
+.card4 {
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#0059fd00, #6494ed00);
+    transition: all .5s;
+}
+
+.card4:hover {
+    background-image: linear-gradient(#ff0000, #af0000);
+}
+
+.card4 .img4 {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-image: url('../../img/footer_ferrari.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: all .5s;
+    z-index: 2;
+    position: relative;
+    opacity: .8;
+}
+
+.card4 .img4 span {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 100;
+    font-style: italic;
+    transition: all .5s;
+}
+
+.card4:hover .img4 {
+    width: 430px;
+    opacity: 1;
+}
+
+.card4:hover .img4 span {
+    font-size: 28px;
+}
+
+.card4 .content {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+}
+
+.card4:hover .content {
+    height: 260px;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card4 .content p {
+    margin: 0;
+}
+
+.card4 .content .title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.card4 .content .desc {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: .8;
+    margin-top: 8px;
+    color: #000000;
+}
+
+.card4 .arrow {
+    padding: 15px;
+    transform: rotate(-180deg);
+    transition: all .5s;
+}
+
+.card4:hover .arrow {
+    transform: rotate(0);
+}
+
+.card4 .arrow span {
+    font-size: 24px;
+}
+
+/* card 5 */
+.card5 {
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#6494ed00, #6494ed00);
+    transition: all .5s;
+}
+
+.card5:hover {
+    background-image: linear-gradient(#c7c400, #52df00);
+}
+
+.card5 .img5 {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-image: url('../../img/footer_bob.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: all .5s;
+    z-index: 2;
+    position: relative;
+    opacity: .8;
+}
+
+.card5 .img5 span {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 100;
+    font-style: italic;
+    transition: all .5s;
+}
+
+.card5:hover .img5 {
+    width: 430px;
+    opacity: 1;
+}
+
+.card5:hover .img5 span {
+    font-size: 28px;
+}
+
+.card5 .content {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+}
+
+.card5:hover .content {
+    height: 260px;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card5 .content p {
+    margin: 0;
+}
+
+.card5 .content .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card5 .content .desc {
+    font-size: 14px;
+    font-weight: 100;
+    font-weight: bold;
+    opacity: .8;
+    margin-top: 8px;
+}
+
+.card5 .arrow {
+    padding: 15px;
+    transform: rotate(-180deg);
+    transition: all .5s;
+}
+
+.card5:hover .arrow {
+    transform: rotate(0);
+}
+
+.card5 .arrow span {
+    font-size: 24px;
+}
+
+/* Card 6 */
+.card6 {
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#6494ed00, #6494ed00);
+    transition: all .5s;
+}
+
+.card6:hover {
+    background-image: linear-gradient(#ff1900, #CD6155);
+}
+
+.card6 .img6 {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-image: url('../../img/madame_teia_footer.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: all .5s;
+    z-index: 2;
+    position: relative;
+    opacity: .8;
+}
+
+.card6 .img6 span {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 100;
+    font-style: italic;
+    transition: all .5s;
+}
+
+.card6:hover .img6 {
+    width: 430px;
+    opacity: 1;
+}
+
+.card6:hover .img6 span {
+    font-size: 28px;
+}
+
+.card6 .content {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+}
+
+.card6:hover .content {
+    height: 260px;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card6 .content p {
+    margin: 0;
+}
+
+.card6 .content .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card6 .content .desc {
+    font-size: 14px;
+    font-weight: 100;
+    font-weight: bold;
+    opacity: .8;
+    margin-top: 8px;
+}
+
+.card6 .arrow {
+    padding: 15px;
+    transform: rotate(-180deg);
+    transition: all .5s;
+}
+
+.card6:hover .arrow {
+    transform: rotate(0);
+}
+
+.card6 .arrow span {
+    font-size: 24px;
+}
+
+/* Card 7 */
+.card7 {
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#6494ed00, #6494ed00);
+    transition: all .5s;
+}
+
+.card7:hover {
+    background-image: linear-gradient(#AF7AC5, #AF7AC5);
+}
+
+.card7 .img7 {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    transition: all .5s;
+    z-index: 2;
+    position: relative;
+    opacity: .8;
+}
+
+.card7 .img7 span {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 100;
+    font-style: italic;
+    transition: all .5s;
+}
+
+.card7:hover .img7 {
+    width: 430px;
+    opacity: 1;
+}
+
+.card7:hover .img7 span {
+    font-size: 28px;
+}
+
+.card7 .content {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+}
+
+.card7:hover .content {
+    height: 260px;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card7 .content p {
+    margin: 0;
+}
+
+.card7 .content .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card7 .content .desc {
+    font-size: 14px;
+    font-weight: 100;
+    font-weight: bold;
+    opacity: .8;
+    margin-top: 8px;
+}
+
+.card7 .arrow {
+    padding: 15px;
+    transform: rotate(-180deg);
+    transition: all .5s;
+}
+
+.card7:hover .arrow {
+    transform: rotate(0);
+}
+
+.card7 .arrow span {
+    font-size: 24px;
+}
+
+/* Card 8 */
+.card8 {
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#6494ed00, #6494ed00);
+    transition: all .5s;
+}
+
+.card8:hover {
+    background-image: linear-gradient(#AF7AC5, #AF7AC5);
+}
+
+.card8 .img8 {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    transition: all .5s;
+    z-index: 2;
+    position: relative;
+    opacity: .8;
+}
+
+.card8 .img8 span {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 100;
+    font-style: italic;
+    transition: all .5s;
+}
+
+.card8:hover .img8 {
+    width: 430px;
+    opacity: 1;
+}
+
+.card8:hover .img8 span {
+    font-size: 28px;
+}
+
+.card8 .content {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+}
+
+.card8:hover .content {
+    height: 260px;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card8 .content p {
+    margin: 0;
+}
+
+.card8 .content .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card8 .content .desc {
+    font-size: 14px;
+    font-weight: 100;
+    font-weight: bold;
+    opacity: .8;
+    margin-top: 8px;
+}
+
+.card8 .arrow {
+    padding: 15px;
+    transform: rotate(-180deg);
+    transition: all .5s;
+}
+
+.card8:hover .arrow {
+    transform: rotate(0);
+}
+
+.card8 .arrow span {
+    font-size: 24px;
+}
+
+
+/* CSS BUTTON */
+.style-button{
+    appearance: none;
+    background-color: #FAFBFC;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+    box-sizing: border-box;
+    color: #24292E;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    padding: 6px 16px;
+    position: relative;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: break-word;
+  }
+  
+  .style-button:hover {
+      background-color: #F3F4F6;
+      text-decoration: none;
+      transition-duration: 0.1s;
+  }
+  
+  
+  .style-a-button{
+      text-decoration: none;
+  }
+  
+  /* FOOTER */
+  .footer-basic {
+      padding:40px 0;
+      background-color:#ffffff;
+      color:#000000;
+    }
+    
+    .footer-basic ul {
+      padding:0;
+      list-style:none;
+      text-align:center;
+      font-size:18px;
+      line-height:1.6;
+      margin-bottom:0;
+    }
+    
+    .footer-basic li {
+      padding:0 10px;
+    }
+    
+    .footer-basic ul a {
+      color:inherit;
+      text-decoration:none;
+      opacity:0.8;
+    }
+    
+    .footer-basic ul a:hover {
+      opacity:1;
+    }
+    
+    
+    
+    .footer-basic .social > a {
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    
+    
+    .footer-basic .copyright {
+      margin-top:15px;
+      text-align:center;
+      font-size:13px;
+      color:#000000;
+      margin-bottom:0;
+    }
