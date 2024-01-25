@@ -52,7 +52,7 @@
 }
 
 .card:hover {
-    background-image: linear-gradient(#1e90ff, #1e90ff);
+    background-image: linear-gradient(#CA6F1E, #CA6F1E);
 }
 
 .card .img {
@@ -61,7 +61,7 @@
     justify-content: center;
     align-items: center;
     height: 200px;
-    background-image: url('');
+    background-image: url('../../img/footer_godzilla.jpg');
     background-size: cover;
     background-position: center;
     transition: all .5s;
@@ -115,7 +115,7 @@
 }
 
 .card .content .desc {
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 100;
     font-weight: bold;
     opacity: .8;
@@ -153,7 +153,7 @@
 }
 
 .card2:hover {
-    background-image: linear-gradient(#afeeee, #afeeee);
+    background-image: linear-gradient(#2ECC71, #239B56);
 }
 
 .card2 .img2 {
@@ -162,7 +162,7 @@
     justify-content: center;
     align-items: center;
     height: 200px;
-    background-image: url('');
+    background-image: url('../../img/kung_fu_panda_4.jpg');
     background-size: cover;
     background-position: center;
     transition: all .5s;
@@ -216,7 +216,7 @@
 }
 
 .card2 .content .desc {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 100;
     font-weight: bold;
     opacity: .8;
@@ -255,7 +255,7 @@
 }
 
 .card3:hover {
-    background-image: linear-gradient(#672abf, #380e74);
+    background-image: linear-gradient(#3498DB, #2980B9);
 }
 
 .card3 .img3 {
@@ -264,7 +264,7 @@
     justify-content: center;
     align-items: center;
     height: 200px;
-    background-image: url('');
+    background-image: url('../../img/footer_caca_fantasma.jpeg');
     background-size: cover;
     background-position: center;
     transition: all .5s;
@@ -319,7 +319,7 @@
 }
 
 .card3 .content .desc {
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 100;
     font-weight: bold;
     opacity: .8;
@@ -367,7 +367,7 @@
     justify-content: center;
     align-items: center;
     height: 200px;
-    background-image: url('');
+    background-image: url('../../img/Desespero-profundo-capa.jpg');
     background-size: cover;
     background-position: center;
     transition: all .5s;
@@ -417,12 +417,12 @@
 
 .card4 .content .title {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .card4 .content .desc {
-    font-size: 14px;
-    font-weight: 100;
+    font-size: 12px;
+    font-weight: 800;
     opacity: .8;
     margin-top: 8px;
 }
